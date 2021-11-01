@@ -1,0 +1,43 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    <form class="account " method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+
+                        <div class="form-label-group">
+                            <input asp-for="Input.Email" type="email" id="inputEmail" class="form-control " placeholder="Email address" required autofocus>
+
+                        </div>
+
+                        <div class="form-label-group">
+                            <input asp-for="Input.Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" asp-for="Input.RememberMe">
+                            <label class="custom-control-label" for="customCheck1" asp-for="Input.RememberMe"></label>
+                        </div>
+                        <button class="btn btn-lg btn-secondary btn-block text-uppercase" type="submit">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
